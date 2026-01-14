@@ -15,9 +15,9 @@ st.markdown("""
 <style>
     .main-header { font-size: 2.5rem; font-weight: bold; color: #1E3A8A; text-align: center; padding: 1rem 0; }
     .sub-header { font-size: 1.2rem; color: #64748B; text-align: center; margin-bottom: 2rem; }
-    .insight-box { background-color: #F0F9FF; border-left: 4px solid #0EA5E9; padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
-    .warning-box { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
-    .success-box { background-color: #D1FAE5; border-left: 4px solid #10B981; padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+    .insight-box { background-color: #F0F9FF; border-left: 4px solid #0EA5E9; padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; color: #1E40AF; }
+    .warning-box { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; color: #92400E; }
+    .success-box { background-color: #D1FAE5; border-left: 4px solid #10B981; padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; color: #065F46; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -80,7 +80,7 @@ def generate_comparison_report(selected_brands, df, cohort_filter, event_filter)
 with st.sidebar:
     st.markdown("## 🏃 马拉松跑鞋分析")
     st.markdown("---")
-    page = st.radio("选择分析模块", ["🏠 总览", "👟 乔丹专题", "🌏 国产vs国际", "⚖️ 品牌对比", "📊 数据浏览"])
+    page = st.radio("选择分析模块", ["🏠 总览", "👟 乔丹专题", "🌏 国产vs国际", "⚖️ 品牌对比"])
     st.markdown("---")
     st.markdown(f"### 📅 数据范围\n- 赛事: {df['event'].nunique()} 场\n- 年份: {df['year'].min()}-{df['year'].max()}\n- 品牌: {df['brand'].nunique()} 个\n- 记录: {len(df)} 条")
 
@@ -300,6 +300,10 @@ elif page == "🌏 国产vs国际":
                     if len(bd) > 0: fig.add_trace(go.Scatter(x=bd['year'], y=bd['rank'], mode='lines+markers', name=b))
                 fig.update_layout(height=350, yaxis=dict(autorange='reversed', title='排名'), xaxis=dict(title='年份', dtick=1))
                 st.plotly_chart(fig, use_container_width=True)
+        
+        st.markdown("---")
+        st.markdown("### 🤖 智能分析报告")
+        st.markdown('<div class="success-box"><strong>📊 国产品牌崛起分析</strong><br><br><strong>1. 整体趋势</strong><br>国产品牌在马拉松赛场上实现了从"追赶者"到"主导者"的华丽转身，市场份额持续增长。<br><br><strong>2. 关键转折点</strong><br>2022-2023年是关键转折期，特步、鸿星尔克等品牌凭借碳板跑鞋技术突破，打破了Nike等国际品牌的垄断地位。<br><br><strong>3. 分化趋势</strong><br>国产品牌内部出现明显分化：特步稳居榜首，必迈、李宁快速上升，部分品牌面临更激烈竞争。</div>', unsafe_allow_html=True)
 
 elif page == "⚖️ 品牌对比":
     st.markdown("## ⚖️ 自由品牌对比分析")
@@ -343,15 +347,30 @@ elif page == "⚖️ 品牌对比":
             
             st.markdown("---")
             st.markdown("### 🎯 综合实力雷达图")
+            
+            # 添加可折叠的维度说明
+            with st.expander("📖 点击查看雷达图各维度含义"):
+                st.markdown("""
+                | 维度 | 计算方式 | 含义说明 |
+                |------|----------|----------|
+                | **排名得分** | 100 - 平均排名×5 | 平均排名越靠前，得分越高。第1名得95分，第10名得50分 |
+                | **份额得分** | 平均市场份额×5 | 市场份额越高，得分越高。20%份额得100分，10%份额得50分 |
+                | **最佳表现** | 100 - 最佳排名×8 | 历史最佳排名越靠前，得分越高。第1名得92分，第5名得60分 |
+                | **稳定性** | 100 - 排名标准差×5 | 排名波动越小，得分越高。标准差为0得100分，波动大则得分低 |
+                | **赛事覆盖** | 参与赛事数/总赛事数×100 | 参与的赛事越多，得分越高。覆盖全部赛事得100分 |
+                
+                **说明**：得分范围0-100，分数越高表示该维度表现越好。
+                """)
+            
             radar_data = []
             for b in selected:
                 bd = fdf[fdf['brand'] == b]
                 if len(bd) == 0: continue
-                radar_data.append({'brand': b, '排名': max(0, 100 - bd['rank'].mean()*5), '份额': min(100, bd['share_pct'].mean()*5),
-                    '最佳': max(0, 100 - bd['rank'].min()*8), '稳定': max(0, 100 - bd['rank'].std()*5),
-                    '覆盖': bd['event'].nunique() / df['event'].nunique() * 100})
+                radar_data.append({'brand': b, '排名得分': max(0, 100 - bd['rank'].mean()*5), '份额得分': min(100, bd['share_pct'].mean()*5),
+                    '最佳表现': max(0, 100 - bd['rank'].min()*8), '稳定性': max(0, 100 - bd['rank'].std()*5),
+                    '赛事覆盖': bd['event'].nunique() / df['event'].nunique() * 100})
             if radar_data:
-                cats = ['排名', '份额', '最佳', '稳定', '覆盖']
+                cats = ['排名得分', '份额得分', '最佳表现', '稳定性', '赛事覆盖']
                 fig = go.Figure()
                 for r in radar_data:
                     fig.add_trace(go.Scatterpolar(r=[r[c] for c in cats], theta=cats, fill='toself', name=r['brand']))
@@ -373,29 +392,6 @@ elif page == "⚖️ 品牌对比":
                 
                 best, worst = report[0], report[-1]
                 st.markdown(f'<div class="insight-box"><strong>📊 对比结论</strong><br>• <strong>{best["brand"]}</strong>表现最佳，平均第{best["avg_rank"]:.1f}名，份额{best["avg_share"]:.1f}%<br>• <strong>{worst["brand"]}</strong>相对较弱，平均第{worst["avg_rank"]:.1f}名</div>', unsafe_allow_html=True)
-
-elif page == "📊 数据浏览":
-    st.markdown("## 📊 完整数据浏览")
-    st.markdown("---")
-    c1, c2, c3, c4 = st.columns(4)
-    with c1: year_f = st.multiselect("年份", sorted(df['year'].unique()), default=sorted(df['year'].unique()))
-    with c2: event_f = st.multiselect("赛事", df['event'].unique(), default=list(df['event'].unique()))
-    with c3: cohort_f = st.multiselect("人群", df['cohort'].unique(), default=list(df['cohort'].unique()))
-    with c4: type_f = st.multiselect("类型", ['domestic', 'international', 'other'], default=['domestic', 'international'])
-    
-    fdf = df[(df['year'].isin(year_f)) & (df['event'].isin(event_f)) & (df['cohort'].isin(cohort_f)) & (df['brand_type'].isin(type_f))].copy()
-    search = st.text_input("🔍 搜索品牌")
-    if search: fdf = fdf[fdf['brand'].str.contains(search, case=False, na=False)]
-    
-    st.markdown(f"**共 {len(fdf)} 条记录**")
-    disp = fdf[['year', 'event', 'cohort', 'rank', 'brand', 'brand_type', 'share_pct']].copy()
-    disp.columns = ['年份', '赛事', '人群', '排名', '品牌', '类型', '份额(%)']
-    disp['类型'] = disp['类型'].map({'domestic': '国产', 'international': '国际', 'other': '其他'})
-    disp['份额(%)'] = disp['份额(%)'].round(1)
-    st.dataframe(disp.sort_values(['年份', '赛事', '人群', '排名'], ascending=[False, True, True, True]), use_container_width=True, height=500, hide_index=True)
-    
-    csv = disp.to_csv(index=False).encode('utf-8-sig')
-    st.download_button("📥 下载CSV", csv, "marathon_shoe_data.csv", "text/csv")
 
 st.markdown("---")
 st.markdown('<div style="text-align:center;color:#64748B;padding:1rem;">📊 马拉松跑鞋品牌分析平台 | 数据来源：悦跑圈等平台</div>', unsafe_allow_html=True)
