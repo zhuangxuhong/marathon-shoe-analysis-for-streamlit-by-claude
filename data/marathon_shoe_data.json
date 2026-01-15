@@ -7568,6 +7568,429 @@
       "brand_type": "other",
       "rank": 26,
       "share": 0.001
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "特步",
+      "brand_type": "domestic",
+      "rank": 1,
+      "share": 0.601
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "必迈",
+      "brand_type": "domestic",
+      "rank": 2,
+      "share": 0.079
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "李宁",
+      "brand_type": "domestic",
+      "rank": 3,
+      "share": 0.076
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "Adidas",
+      "brand_type": "international",
+      "rank": 4,
+      "share": 0.055999999999999994
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "乔丹",
+      "brand_type": "domestic",
+      "rank": 5,
+      "share": 0.05
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "安踏",
+      "brand_type": "domestic",
+      "rank": 6,
+      "share": 0.040999999999999995
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "Saucony",
+      "brand_type": "international",
+      "rank": 7,
+      "share": 0.018000000000000002
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "Nike",
+      "brand_type": "international",
+      "rank": 8,
+      "share": 0.017
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "Under Armour",
+      "brand_type": "international",
+      "rank": 9,
+      "share": 0.013999999999999999
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "361°",
+      "brand_type": "domestic",
+      "rank": 10,
+      "share": 0.008
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "ASICS",
+      "brand_type": "international",
+      "rank": 11,
+      "share": 0.005
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "斯凯奇",
+      "brand_type": "international",
+      "rank": 12,
+      "share": 0.004
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "鸿星尔克",
+      "brand_type": "domestic",
+      "rank": 13,
+      "share": 0.004
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "马孔多",
+      "brand_type": "domestic",
+      "rank": 14,
+      "share": 0.004
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "Brooks",
+      "brand_type": "international",
+      "rank": 15,
+      "share": 0.003
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "海尔斯",
+      "brand_type": "domestic",
+      "rank": 16,
+      "share": 0.002
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "HOKA",
+      "brand_type": "international",
+      "rank": 17,
+      "share": 0.002
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "匹克",
+      "brand_type": "domestic",
+      "rank": 18,
+      "share": 0.002
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "Puma",
+      "brand_type": "international",
+      "rank": 19,
+      "share": 0.001
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "New Balance",
+      "brand_type": "international",
+      "rank": 20,
+      "share": 0.001
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "破3选手",
+      "brand": "美津浓",
+      "brand_type": "international",
+      "rank": 21,
+      "share": 0.001
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "特步",
+      "brand_type": "domestic",
+      "rank": 1,
+      "share": 0.451
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "Adidas",
+      "brand_type": "international",
+      "rank": 2,
+      "share": 0.09
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "Saucony",
+      "brand_type": "international",
+      "rank": 3,
+      "share": 0.09
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "必迈",
+      "brand_type": "domestic",
+      "rank": 4,
+      "share": 0.064
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "李宁",
+      "brand_type": "domestic",
+      "rank": 5,
+      "share": 0.057999999999999996
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "Nike",
+      "brand_type": "international",
+      "rank": 6,
+      "share": 0.055
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "安踏",
+      "brand_type": "domestic",
+      "rank": 7,
+      "share": 0.038
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "乔丹",
+      "brand_type": "domestic",
+      "rank": 8,
+      "share": 0.033
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "ASICS",
+      "brand_type": "international",
+      "rank": 9,
+      "share": 0.033
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "361°",
+      "brand_type": "domestic",
+      "rank": 10,
+      "share": 0.015
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "鸿星尔克",
+      "brand_type": "domestic",
+      "rank": 11,
+      "share": 0.013000000000000001
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "Brooks",
+      "brand_type": "international",
+      "rank": 12,
+      "share": 0.008
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "New Balance",
+      "brand_type": "international",
+      "rank": 13,
+      "share": 0.006
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "HOKA",
+      "brand_type": "international",
+      "rank": 14,
+      "share": 0.005
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "多威",
+      "brand_type": "domestic",
+      "rank": 15,
+      "share": 0.004
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "匹克",
+      "brand_type": "domestic",
+      "rank": 16,
+      "share": 0.003
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "Under Armour",
+      "brand_type": "international",
+      "rank": 17,
+      "share": 0.003
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "海尔斯",
+      "brand_type": "domestic",
+      "rank": 18,
+      "share": 0.003
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "On昂跑",
+      "brand_type": "international",
+      "rank": 19,
+      "share": 0.003
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "美津浓",
+      "brand_type": "international",
+      "rank": 20,
+      "share": 0.002
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "Puma",
+      "brand_type": "international",
+      "rank": 21,
+      "share": 0.002
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "R2 REALRUN",
+      "brand_type": "domestic",
+      "rank": 22,
+      "share": 0.002
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "斯凯奇",
+      "brand_type": "international",
+      "rank": 23,
+      "share": 0.001
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "迪卡侬",
+      "brand_type": "international",
+      "rank": 24,
+      "share": 0.001
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "马孔多",
+      "brand_type": "domestic",
+      "rank": 25,
+      "share": 0.001
+    },
+    {
+      "year": 2026,
+      "event": "厦门马拉松",
+      "cohort": "全局跑者",
+      "brand": "Altra",
+      "brand_type": "international",
+      "rank": 26,
+      "share": 0.001
     }
   ],
   "brands": {
@@ -7756,7 +8179,7 @@
     }
   ],
   "metadata": {
-    "total_records": 841,
+    "total_records": 888,
     "events": [
       "厦门马拉松",
       "上海马拉松",
@@ -7773,7 +8196,8 @@
       2022,
       2023,
       2024,
-      2025
+      2025,
+      2026
     ],
     "generated_at": "2025-01-14"
   }
