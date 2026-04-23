@@ -24,18 +24,22 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ==================== 数据加载 ====================
-@st.cache_data
-def load_data():
-    with open('data/marathon_shoe_data.json', 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    df = pd.DataFrame(data['records'])
-    df['share_pct'] = df['share'] * 100
-    df['year'] = df['year'].astype(int)
-    df['rank'] = df['rank'].astype(int)
-    df['type_zh'] = df['brand_type'].map({'domestic': '国产', 'international': '国际', 'other': '其他'})
-    return df, data['brands']
+from pathlib import Path
 
-df, brands_info = load_data()
+  @st.cache_data
+  def load_data():
+      data_path = Path(__file__).parent / 'data' / 'marathon_shoe_data.json'
+      with data_path.open('r', encoding='utf-8') as f:
+          data = json.load(f)
+
+  def calculate_yearly_rank(data, aggregate=True):
+      if aggregate:
+          yearly = data.groupby(['year', 'brand', 'type_zh'])['share'].mean().reset_index()
+          yearly['rank'] = yearly.groupby('year')['share'].rank(ascending=False, method='min').astype(int)
+      else:
+          yearly = data.groupby(['year', 'event', 'brand', 'type_zh'])['share'].mean().reset_index()
+          yearly['rank'] = yearly.groupby(['year', 'event'])['share'].rank(ascending=False, method='min').astype(int)
+      return yearly
 
 # ==================== 辅助函数 ====================
 def generate_dynamic_analysis(brand_data, brand_name):
