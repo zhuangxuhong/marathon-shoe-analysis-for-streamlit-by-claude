@@ -1,9 +1,4 @@
   # -*- coding: utf-8 -*-
-  """
-  马拉松跑鞋品牌数据分析平台 v2.0
-  结合Claude和Grok方案优点的优化版本
-  """
-
   import streamlit as st
   import pandas as pd
   import plotly.express as px
